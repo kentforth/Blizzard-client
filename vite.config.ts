@@ -8,6 +8,7 @@ export default defineConfig({
       scss: {
         additionalData: `
         @import '../src/assets/scss/_variables.scss';
+        @import '../src/assets/scss/mixins/_responsive.scss';
         `
       },
     },
