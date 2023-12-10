@@ -71,7 +71,12 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
 
 // reset heading style
 h1,
@@ -82,6 +87,10 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+}
+
+h2 {
+  font-size: 30px;
 }
 
 // reset list style

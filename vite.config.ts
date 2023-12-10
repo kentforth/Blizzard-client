@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -7,6 +8,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
+        @import '../src/assets/scss/fonts.scss';
         @import '../src/assets/scss/_variables.scss';
         @import '../src/assets/scss/mixins/_responsive.scss';
         `
@@ -17,5 +19,5 @@ export default defineConfig({
     host: 'localhost',
     port: 3000
   },
-  plugins: [vue()],
+  plugins: [vue(), svgLoader()],
 })
