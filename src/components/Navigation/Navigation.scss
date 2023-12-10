@@ -1,0 +1,63 @@
+.navigation {
+  background: rgba(0, 0 , 0, 0.7);
+  width: 170px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid rgba(255, 155, 155, 0.3);
+
+  .router-link-exact-active {
+    background: rgba(33, 33, 33, 0.8);
+  }
+
+  &__link {
+    height: 130px;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  &__image {
+    width: 100%;
+  }
+  
+  @include ui-mobile-only {
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 155, 155, 0.3);
+    
+    &__inner {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    
+    &__link {
+      height: 70px;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

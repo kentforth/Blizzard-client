@@ -1,0 +1,11 @@
+@mixin ui-mobile-only {
+  @media (max-width: $ui-tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin ui-desktop-only {
+  @media (min-width: $ui-tablet) {
+    @content;
+  }
+}
