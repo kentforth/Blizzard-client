@@ -19,6 +19,10 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+div {
+  color: $white;
+}
+
 // all media elements set to block and full width
 img,
 svg,
@@ -60,11 +64,14 @@ button, [role="button"] {
 
 // reset anchor style
 a {
+  width: max-content;
   cursor: pointer;
   color: inherit;
   text-decoration: inherit;
   -webkit-tap-highlight-color: transparent;
 }
+
+
 
 // reset heading style
 h1,
