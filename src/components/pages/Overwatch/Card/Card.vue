@@ -20,6 +20,8 @@ const props = defineProps({
     required: true
   }
 })
+
+
 </script>
 
 <template>
@@ -28,6 +30,7 @@ const props = defineProps({
       :icon="icon"
       :title="props.title"
     />
+    <slot />
   </div>
 </template>
 
@@ -35,6 +38,7 @@ const props = defineProps({
 .card {
   background: rgba(60, 55, 66, 0.5);
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   border-radius: 5px;

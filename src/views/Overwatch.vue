@@ -13,6 +13,86 @@ components: {
 </script>
 
 <script setup>
+import { 
+  ref,
+  onMounted
+} from 'vue'
+
+import { socket } from "../services/socket.ts";
+
+const usersChartOptions =  {
+  chart: {
+    type: "area",
+        foreColor: "#FFEDFF",
+        animations: {
+      enabled: true,
+          easing: "easeinout",
+          speed: 800,
+          animateGradually: {
+        enabled: true,
+            delay: 150,
+      },
+      dynamicAnimation: {
+        enabled: true,
+            speed: 350,
+      },
+    },
+  },
+  colors: ["#DAA011"],
+      dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: "smooth",
+  },
+  grid: {
+    show: false,
+  },
+  yaxis: {
+    show: false,
+  },
+  xaxis: {
+    type: "datetime",
+        tickAmount: 9,
+        labels: {
+      format: "HH:mm:ss",
+          datetimeUTC: false,
+    },
+  },
+  tooltip: {
+    theme: "dark",
+        x: {
+      format: "HH:mm:ss",
+    },
+  },
+}
+
+const usersSeries = ref([
+  {
+    name: "Users",
+    data: [],
+  },
+])
+
+onMounted(() => {
+  socket.on("overwatchNewNumber", (...args) => {
+    addUser(...args)
+  });
+})
+
+const addUser  = (user) => {
+  if (usersSeries.value[0].data.length >= 20) {
+    usersSeries.value[0].data.shift();
+  } else {
+    usersSeries.value[0].data.push(user);
+  }
+
+  usersSeries.value = [
+    {
+      data: usersSeries.value[0].data,
+    },
+  ];
+}
 
 </script>
 
@@ -24,7 +104,14 @@ components: {
       <Card
         title="Users"
         icon="users"
-      />
+      >
+        <apexchart
+          type="area"
+          height="200"
+          :options="usersChartOptions"
+          :series="usersSeries"
+        />
+      </Card>
       <Card
         title="Clans"
         icon="clans"
