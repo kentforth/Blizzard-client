@@ -72,12 +72,12 @@ const usersOptions = ref({
 })
 
 onBeforeMount(() => {
-  socket.on("overwatchNewNumber", (args: number) => {
+  socket.on("overwatchNewNumber", (args: never) => {
     addUser(args)
   });
 })
 
-const addUser  = (user: number) => {
+const addUser  = (user: never) => {
   if (usersSeries.value[0].data.length >= 20) {
     return usersSeries.value[0].data.shift()
   }
