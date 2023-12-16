@@ -16,6 +16,7 @@ html {
 // reset body line-height
 body {
   line-height: 1;
+  overflow: hidden;
   text-rendering: optimizeSpeed;
 }
 
@@ -55,8 +56,15 @@ table {
 // assign button hover state
 button, [role="button"] {
   cursor: pointer;
-  background-color: transparent;
+  border: none;
+  width: max-content;
+  padding: 10px 20px;
+  background: $white;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  border-radius: 4px;
   -webkit-tap-highlight-color: transparent;
+  &:active,
   &:focus {
     outline: 0;
   }

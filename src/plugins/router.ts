@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/overwatch',
         name: 'overwatch',
-        component: () => import('../views/Overwatch.vue')
+        component: () => import('../views/Overwatch/Overwatch.vue')
     },
     {
         path: '/starcraft',

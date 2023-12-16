@@ -1,0 +1,48 @@
+.overwatch {
+  background: url("../../assets/images/overwatch-bg.png") center center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+
+  &__container {
+    margin-left: auto;
+    width: calc(100% - 170px);
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  &__button {
+    align-self: center;
+  }
+
+  &__inner {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    align-self: center;
+    justify-content: space-between;
+  }
+
+  &__chart {
+    margin-top: 10px;
+  }
+  
+  @include ui-mobile-only {
+    &__container {
+      margin-top: 90px;
+      width: 100%;
+      margin-left: 0;
+      padding: 0 20px;
+    }
+    
+    
+    &__inner {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+  }
+}
