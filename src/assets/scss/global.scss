@@ -13,10 +13,8 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-// reset body line-height
 body {
   line-height: 1;
-  overflow: hidden;
   text-rendering: optimizeSpeed;
 }
 
@@ -153,5 +151,15 @@ textarea {
   appearance: none;
   &:focus {
     outline: 0
+  }
+}
+
+@include ui-mobile-only {
+  h2 {
+    font-size: 20px;
+  }
+  
+  .icon{
+    scale: 0.6;
   }
 }

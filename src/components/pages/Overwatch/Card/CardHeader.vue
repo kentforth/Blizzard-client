@@ -29,7 +29,10 @@ const icon = defineAsyncComponent(() => import (`../../../../assets/icons/${prop
     <h2 class="card-header__title">
       {{ title }}
     </h2>
-    <component :is="icon" />
+    <component
+      :is="icon"
+      class="icon"
+    />
   </div>
 </template>
 
