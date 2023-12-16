@@ -40,7 +40,7 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   border-radius: 5px;
   padding: 20px;
 }

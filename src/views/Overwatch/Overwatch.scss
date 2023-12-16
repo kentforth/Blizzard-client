@@ -26,19 +26,14 @@
     align-self: center;
     justify-content: space-between;
   }
-
-  &__chart {
-    margin-top: 10px;
-  }
   
   @include ui-mobile-only {
     &__container {
       margin-top: 90px;
       width: 100%;
       margin-left: 0;
-      padding: 0 20px;
+      padding: 0 20px 20px 20px;
     }
-    
     
     &__inner {
       grid-template-columns: 1fr;
