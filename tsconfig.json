@@ -6,13 +6,6 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "allowJs": true,
-    /*"baseUrl": "./",
-    "paths": {
-      "src*//*": [
-        "./src*//*"
-      ]
-    },*/
-    
 
     /* Bundler mode */
     "moduleResolution": "bundler",
