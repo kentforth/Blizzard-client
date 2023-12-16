@@ -77,7 +77,7 @@ onBeforeMount(() => {
   });
 })
 
-const addUser  = (user: number) => {
+const addUser  = (user: number | never) => {
   if (usersSeries.value[0].data.length >= 20) {
     return usersSeries.value[0].data.shift()
   }
