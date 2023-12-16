@@ -55,7 +55,7 @@ const clansOptions =  {
   },
   dataLabels: {
     enabled: true,
-    formatter: function (val) {
+    formatter: function (val: number) {
       return val + "%";
     },
     offsetY: -20,
@@ -96,7 +96,7 @@ const clansOptions =  {
     },
     labels: {
       show: false,
-      formatter: function (val) {
+      formatter: function (val: number) {
         return val + "%";
       },
     },
