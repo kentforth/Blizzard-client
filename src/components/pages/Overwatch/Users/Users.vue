@@ -12,7 +12,12 @@ import {
 
 import { socket } from "../../../../services/socket";
 
-const usersSeries = ref<object[]>([
+interface ISeries {
+  name: string,
+  data: number[]
+}
+
+const usersSeries = ref<ISeries[]>([
   {
     name: "Users",
     data: [],
