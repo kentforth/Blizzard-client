@@ -4,7 +4,6 @@
   min-height: 100vh;
   width: 100%;
   position: absolute;
-  padding-bottom: 20px;
 
   &__container {
     margin-left: auto;
@@ -22,10 +21,30 @@
     width: 100%;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 50px;
     align-self: center;
     justify-content: space-between;
+  }
+  
+  &__users {
+    grid-column: 1 / span 3;
+  }
+
+  &__clans-winrate {
+    grid-column: 4 / span 3;
+  }
+  
+  &__tank {
+    grid-column: 1 / span 2;
+  }
+
+  &__damage {
+    grid-column: 3 / span 2;
+  }
+
+  &__healer {
+    grid-column: 5 / span 2;
   }
   
   @include ui-mobile-only {
@@ -39,6 +58,14 @@
     &__inner {
       grid-template-columns: 1fr;
       grid-gap: 20px;
+    }
+
+    &__tank,
+    &__users,
+    &__damage,
+    &__healer,
+    &__clans-winrate, {
+      grid-column: 1 / span 6;
     }
   }
 }

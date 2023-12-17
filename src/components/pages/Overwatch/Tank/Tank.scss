@@ -21,4 +21,10 @@
       margin-left: 10px;
     }
   }
+  
+  @include ui-mobile-only {
+    &__images {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }

@@ -25,6 +25,7 @@ import UiButton from "@/components/UiButton/UiButton.vue";
 import Tank from "@/components/pages/Overwatch/Tank/Tank.vue";
 import Users from "@/components/pages/Overwatch/Users/Users.vue";
 import Damage from "@/components/pages/Overwatch/Damage/Damage.vue";
+import Healer from "@/components/pages/Overwatch/Healer/Healer.vue";
 import ClansWinrate from "@/components/pages/Overwatch/ClansWinrate/ClansWinrate.vue";
 
 const isConnected = ref(true)
@@ -58,7 +59,7 @@ const onClick  = () => {
         <Card
           icon="users"
           title="Users"
-          class="overwatch__card"
+          class="overwatch__users"
         >
           <Users />
         </Card>
@@ -66,7 +67,7 @@ const onClick  = () => {
         <Card
           icon="clans"
           title="Clans winrate"
-          class="overwatch__card"
+          class="overwatch__clans-winrate"
         >
           <ClansWinrate />
         </Card>
@@ -74,7 +75,7 @@ const onClick  = () => {
         <Card
           icon="shield"
           title="Users' Choice - Tank"
-          class="overwatch__card"
+          class="overwatch__tank"
         >
           <Tank />
         </Card>
@@ -82,9 +83,17 @@ const onClick  = () => {
         <Card
           icon="damage"
           title="Users' Choice - Damage"
-          class="overwatch__card"
+          class="overwatch__damage"
         >
           <Damage />
+        </Card>
+
+        <Card
+          icon="healer"
+          title="Users' Choice - Healer"
+          class="overwatch__healer"
+        >
+          <Healer />
         </Card>
       </div>
     </div>

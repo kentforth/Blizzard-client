@@ -51,7 +51,7 @@ const dpsSeries = ref([
   14,
 ])
 
-    const dpsOptions = ref({
+const dpsOptions = ref({
   chart: {
     width: 380,
         type: "polarArea",
@@ -136,7 +136,7 @@ const images = [
   { image: symmetra, alt: 'symmetra', name: 'Symmetra'},
   { image: torb, alt: 'torb', name: 'Torb'},
   { image: tracer, alt: 'tracer', name: 'Tracer'},
-  { image: widow, alt: 'widow', name: 'Widow'},
+  { image: widow, alt: 'widow', name: 'Widow'}
 ]
 
 onBeforeMount(() => {
@@ -155,8 +155,8 @@ onBeforeUnmount(() => {
     <apexchart
       type="polarArea"
       height="350"
-      :options="dpsOptions"
       :series="dpsSeries"
+      :options="dpsOptions"
     />
     
     <div class="overwatch-damage__images">
