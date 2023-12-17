@@ -10,12 +10,9 @@ import {
   onBeforeMount
 } from 'vue'
 
-import { socket } from "../../../../services/socket";
+import { socket } from "@/services/socket";
 
-interface ISeries {
-  name: string,
-  data: number[]
-}
+import { ISeries } from '@/types'
 
 const usersSeries = ref<ISeries[]>([
   {

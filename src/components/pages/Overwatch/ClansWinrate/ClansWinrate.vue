@@ -8,10 +8,10 @@ export default {
 import {
   ref,
   UnwrapRef,
-  onBeforeMount, 
+  onBeforeMount
 } from 'vue'
 
-import { socket } from "../../../../services/socket";
+import { socket } from "@/services/socket";
 
 const clansSeries = ref<UnwrapRef<object>>([
   {

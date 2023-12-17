@@ -18,10 +18,14 @@ import {
   computed
 } from 'vue'
 
-import { socket } from "../../services/socket.ts";
-import UiButton from "../../components/UiButton/UiButton.vue";
-import Users from "../../components/pages/Overwatch/Users/Users.vue";
-import ClansWinrate from "../../components/pages/Overwatch/ClansWinrate/ClansWinrate.vue";
+import { socket } from "@/services/socket";
+
+import UiButton from "@/components/UiButton/UiButton.vue";
+
+import Tank from "@/components/pages/Overwatch/Tank/Tank.vue";
+import Users from "@/components/pages/Overwatch/Users/Users.vue";
+import Damage from "@/components/pages/Overwatch/Damage/Damage.vue";
+import ClansWinrate from "@/components/pages/Overwatch/ClansWinrate/ClansWinrate.vue";
 
 const isConnected = ref(true)
 
@@ -65,6 +69,22 @@ const onClick  = () => {
           class="overwatch__card"
         >
           <ClansWinrate />
+        </Card>
+
+        <Card
+          icon="shield"
+          title="Users' Choice - Tank"
+          class="overwatch__card"
+        >
+          <Tank />
+        </Card>
+
+        <Card
+          icon="damage"
+          title="Users' Choice - Damage"
+          class="overwatch__card"
+        >
+          <Damage />
         </Card>
       </div>
     </div>

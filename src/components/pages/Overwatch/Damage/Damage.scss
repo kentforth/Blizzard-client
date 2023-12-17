@@ -1,0 +1,24 @@
+.overwatch-damage {
+  &__images {
+    margin: 10px auto 0 auto;
+    display: grid;
+    align-items: center;
+    grid-gap: 4px;
+    grid-template-columns: repeat(4, 1fr);
+
+    img {
+      height: 50px;
+    }
+  }
+
+  &__hero {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    align-items: center;
+    justify-content: flex-start;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+}
