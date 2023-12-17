@@ -1,14 +1,10 @@
-<script lang="ts">
-
-
+<script>
 export default {
   name: 'UiButton'
 }
 </script>
 
-<script setup lang="ts">
-import { defineProps } from 'vue'
-
+<script setup>
 const props = defineProps({
   title: {
     type:String,

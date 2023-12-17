@@ -20,6 +20,9 @@ export default defineConfig({
     host: 'localhost',
     port: 3000
   },
-  plugins: [vue(), svgLoader()],
+  plugins: [
+    vue(), 
+    svgLoader()
+  ],
   alias: [{ find: "@", replacement: resolve(__dirname, "./src") }]
 })

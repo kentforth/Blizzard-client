@@ -12,7 +12,7 @@ import {
 
 import { socket } from "../../../../services/socket";
 
-const usersSeries = ref([
+const usersSeries = ref<object[]>([
   {
     name: "Users",
     data: [],

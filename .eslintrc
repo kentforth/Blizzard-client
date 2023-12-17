@@ -5,6 +5,7 @@
   "parser": "@typescript-eslint/parser"
 },
   "extends": [
+  "prettier",
   "plugin:vue/strongly-recommended",
   "eslint:recommended",
   "@vue/typescript/recommended"
