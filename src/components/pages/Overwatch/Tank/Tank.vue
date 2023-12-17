@@ -49,7 +49,7 @@ const tanksOptions = ref({
       yaxis: {
         show: false,
         labels: {
-          formatter: function (val) {
+          formatter: function (val: number) {
             return val + "%";
           },
         },
