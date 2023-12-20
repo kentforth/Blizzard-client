@@ -93,7 +93,7 @@ const onClick  = () => {
   <div class="overwatch">
     <div class="container overwatch__container">
       <UiButton
-        :title="text"
+        :text="text"
         class="overwatch__button"
         @click="onClick"
       />

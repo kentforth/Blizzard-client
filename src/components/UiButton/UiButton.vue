@@ -6,7 +6,7 @@ export default {
 
 <script setup>
 const props = defineProps({
-  title: {
+  text: {
     type:String,
     required: true
   }
@@ -15,8 +15,12 @@ const props = defineProps({
 
 <template>
   <button class="ui-button">
-    {{ props.title }}
+    {{ props.text }}
   </button>
 </template>
 
-<style></style>
+<style>
+.ui-button {
+  width: 200px;
+}
+</style>
