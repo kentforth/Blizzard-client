@@ -24,7 +24,9 @@ components: {
 <script setup>
 import { 
   ref, 
-  computed
+  computed,
+  onMounted,
+  onBeforeUnmount
 } from 'vue'
 
 import { socket } from "@/services/socket";
@@ -68,6 +70,14 @@ const cards = [
   }
 ]
 
+onMounted(() => {
+  socket.connect()
+})
+
+onBeforeUnmount(() => {
+  socket.disconnect()
+})
+
 const onClick  = () => {
   isConnected.value = !isConnected.value
   
@@ -77,7 +87,6 @@ const onClick  = () => {
   
   socket.connect()
 }
-
 </script>
 
 <template>
