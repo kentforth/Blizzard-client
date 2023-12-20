@@ -2,12 +2,23 @@
 import Card from "../../components/pages/Overwatch/Card/Card.vue";
 import Navigation from "../../components/Navigation/Navigation.vue";
 
+import Tank from "@/components/pages/Overwatch/Tank/Tank.vue";
+import Users from "@/components/pages/Overwatch/Users/Users.vue";
+import Damage from "@/components/pages/Overwatch/Damage/Damage.vue";
+import Healer from "@/components/pages/Overwatch/Healer/Healer.vue";
+import ClansWinrate from "@/components/pages/Overwatch/ClansWinrate/ClansWinrate.vue";
+
 export default {
 name: "Overwatch",
   
 components: {
   Card,
-  Navigation
+  Tank,
+  Users,
+  Damage,
+  Healer,
+  Navigation,
+  ClansWinrate
   }
 }
 </script>
@@ -22,15 +33,42 @@ import { socket } from "@/services/socket";
 
 import UiButton from "@/components/UiButton/UiButton.vue";
 
-import Tank from "@/components/pages/Overwatch/Tank/Tank.vue";
-import Users from "@/components/pages/Overwatch/Users/Users.vue";
-import Damage from "@/components/pages/Overwatch/Damage/Damage.vue";
-import Healer from "@/components/pages/Overwatch/Healer/Healer.vue";
-import ClansWinrate from "@/components/pages/Overwatch/ClansWinrate/ClansWinrate.vue";
-
 const isConnected = ref(true)
 
 const text = computed(() => isConnected.value ? 'Pause connection' : 'Resume connection')
+
+const cards = [
+  {
+    icon: 'users',
+    title: 'Users',
+    class: 'overwatch__users',
+    component: 'Users'
+  },
+  {
+    icon: 'clans',
+    title: 'Clans winrate',
+    class: 'overwatch__clans-winrate',
+    component: 'ClansWinrate'
+  },
+  {
+    icon: 'shield',
+    title: 'Users Choice - Tank',
+    class: 'overwatch__tank',
+    component: 'Tank'
+  },
+  {
+    icon: 'damage',
+    title: 'Users Choice - Damage',
+    class: 'overwatch__damage',
+    component: 'Damage'
+  },
+  {
+    icon: 'healer',
+    title: 'Users Choice - Healer',
+    class: 'overwatch__healer',
+    component: 'Healer'
+  }
+]
 
 const onClick  = () => {
   isConnected.value = !isConnected.value
@@ -57,43 +95,13 @@ const onClick  = () => {
       
       <div class="overwatch__inner">
         <Card
-          icon="users"
-          title="Users"
-          class="overwatch__users"
+          v-for="card in cards"
+          :key="card.title"
+          :icon="card.icon"
+          :title="card.title"
+          :class="card.class"
         >
-          <Users />
-        </Card>
-
-        <Card
-          icon="clans"
-          title="Clans winrate"
-          class="overwatch__clans-winrate"
-        >
-          <ClansWinrate />
-        </Card>
-
-        <Card
-          icon="shield"
-          title="Users' Choice - Tank"
-          class="overwatch__tank"
-        >
-          <Tank />
-        </Card>
-
-        <Card
-          icon="damage"
-          title="Users' Choice - Damage"
-          class="overwatch__damage"
-        >
-          <Damage />
-        </Card>
-
-        <Card
-          icon="healer"
-          title="Users' Choice - Healer"
-          class="overwatch__healer"
-        >
-          <Healer />
+          <component :is="card.component" />
         </Card>
       </div>
     </div>

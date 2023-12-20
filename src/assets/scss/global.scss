@@ -81,7 +81,7 @@ a {
   width: 80%;
   display: flex;
   justify-content: center;
-  padding: 0 40px;
+  padding: 0 40px 40px 40px;
 }
 
 // reset heading style
@@ -161,5 +161,8 @@ textarea {
   
   .icon{
     scale: 0.6;
+  }
+  .container {
+    padding-bottom: 20px;
   }
 }
