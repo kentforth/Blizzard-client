@@ -1,15 +1,11 @@
 <script>
-import Navigation from "../components/Navigation/Navigation.vue";
 export default {
-  name: "Heartstone",
-  components: { Navigation }
+  name: "Heartstone"
 }
 </script>
 
 <template>
-  <div class="heartstone">
-    <Navigation />
-  </div>
+  <div class="heartstone" />
 </template>
 
 <style scoped lang="scss">

@@ -1,15 +1,11 @@
 <script>
-import Navigation from "../components/Navigation/Navigation.vue";
 export default {
-  name: "Diablo",
-  components: { Navigation }
+  name: "Diablo"
 }
 </script>
 
 <template>
-  <div class="diablo">
-    <Navigation />
-  </div>
+  <div class="diablo" />
 </template>
 
 <style scoped lang="scss">

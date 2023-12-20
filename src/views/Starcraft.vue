@@ -1,15 +1,11 @@
 <script>
-import Navigation from "../components/Navigation/Navigation.vue";
 export default {
   name: "Starcraft",
-  components: { Navigation }
 }
 </script>
 
 <template>
-  <div class="starcraft">
-    <Navigation />
-  </div>
+  <div class="starcraft" />
 </template>
 
 <style scoped lang="scss">

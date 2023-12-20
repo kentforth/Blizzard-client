@@ -1,6 +1,5 @@
 <script>
-import Card from "../../components/pages/Overwatch/Card/Card.vue";
-import Navigation from "../../components/Navigation/Navigation.vue";
+import Card from "@/components/pages/Overwatch/Card/Card.vue";
 
 import Tank from "@/components/pages/Overwatch/Tank/Tank.vue";
 import Users from "@/components/pages/Overwatch/Users/Users.vue";
@@ -17,7 +16,6 @@ components: {
   Users,
   Damage,
   Healer,
-  Navigation,
   ClansWinrate
   }
 }
@@ -84,8 +82,6 @@ const onClick  = () => {
 
 <template>
   <div class="overwatch">
-    <Navigation />
-    
     <div class="container overwatch__container">
       <UiButton
         :title="text"

@@ -1,15 +1,11 @@
 <script>
-import Navigation from "../components/Navigation/Navigation.vue";
 export default {
-  name: "Wow",
-  components: { Navigation }
+  name: "Wow"
 }
 </script>
 
 <template>
-  <div class="wow">
-    <Navigation />
-  </div>
+  <div class="wow" />
 </template>
 
 <style scoped lang="scss">
