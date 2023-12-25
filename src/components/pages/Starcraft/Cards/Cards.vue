@@ -101,7 +101,7 @@ const cards: ICard[] = [
 <template>
   <div class="starcraft-cards">
     <Card
-      :key="card"
+      :key="card.alt"
       :alt="card.alt"
       :image="card.image"
       :units="card.units"
