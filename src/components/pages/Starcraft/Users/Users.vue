@@ -13,7 +13,9 @@ import {
 
 import { socket } from "@/services/socket";
 
-const usersSeries = ref([
+import { ISeries } from "@/types";
+
+const usersSeries = ref<ISeries[]>([
   {
     name: "Users",
     data: [],
@@ -87,8 +89,6 @@ const addUser = (user: any) =>  {
     
   usersSeries.value[0].data.push(user);
 }
-
-
 </script>
 
 <template>

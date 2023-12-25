@@ -23,6 +23,17 @@ import highTemplar from '@/assets/images/starcraft/cards/protoss/high templar.we
 
 import Card from "@/components/pages/Starcraft/Card/Card.vue";
 
+interface ICard {
+  alt: string,
+  image: string,
+  units: IUnit[]
+}
+
+interface IUnit {
+  title: string,
+  image: string
+}
+
 const terrans = [
   {
     title: 'Raven',
@@ -68,20 +79,20 @@ const protosses = [
   }
 ]
 
-const cards = [
+const cards: ICard[] = [
   {
-    image: terran,
     alt: 'terran',
+    image: terran,
     units: terrans
   },
   {
-    image: zerg,
     alt: 'zerg',
+    image: zerg,
     units: zergs
   },
   {
-    image: protoss,
     alt: 'protoss',
+    image: protoss,
     units: protosses
   }
 ]
