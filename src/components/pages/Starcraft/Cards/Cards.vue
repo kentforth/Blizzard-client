@@ -83,17 +83,17 @@ const cards: ICard[] = [
   {
     alt: 'terran',
     image: terran,
-    units: terrans
+    units: terrans as IUnit[]
   },
   {
     alt: 'zerg',
     image: zerg,
-    units: zergs
+    units: zergs as IUnit[] 
   },
   {
     alt: 'protoss',
     image: protoss,
-    units: protosses
+    units: protosses as IUnit[]
   }
 ]
 </script>
@@ -101,11 +101,11 @@ const cards: ICard[] = [
 <template>
   <div class="starcraft-cards">
     <Card
-      :image="card.image"
+      :key="card"
       :alt="card.alt"
+      :image="card.image"
       :units="card.units"
       v-for="card in cards"
-      :key="card"
     />
   </div>
 </template>

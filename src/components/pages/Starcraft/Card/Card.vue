@@ -5,6 +5,13 @@ export default {
 </script>
 
 <script setup lang="ts">
+import { PropType } from "vue";
+
+interface IUnit {
+  title: string,
+  image: string
+}
+
 defineProps({
   image: {
     type: String,
@@ -15,7 +22,7 @@ defineProps({
     default: 'image'
   },
   units: {
-    type: Array,
+    type: Array as PropType<IUnit[]>,
     required: true
   }
 })
