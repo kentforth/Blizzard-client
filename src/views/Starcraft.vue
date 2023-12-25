@@ -14,9 +14,9 @@ import {
   onBeforeUnmount, ref
 } from 'vue'
 import UiButton from "@/components/UiButton/UiButton.vue";
+
 import Users from "@/components/pages/Starcraft/Users/Users.vue";
-
-
+import Cards from "@/components/pages/Starcraft/Cards/Cards.vue";
 
 onBeforeMount(() => {
   socket.connect()
@@ -52,6 +52,8 @@ const onClick  = () => {
       />
 
       <Users />
+      
+      <Cards class="starcraft__cards" />
     </div>
   </div>
 </template>
@@ -73,6 +75,18 @@ const onClick  = () => {
     width: calc(100% - 170px);
     display: flex;
     flex-direction: column;
+  }
+  
+  &__cards {
+    margin-top: 20px;
+  }
+  
+  @include ui-mobile-only {
+    &__container {
+      margin-left: 0;
+      width: 100%;
+      padding: 50px 20px 20px 20px;
+    }
   }
 }
 </style>

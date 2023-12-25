@@ -19,7 +19,7 @@ const usersSeries = ref([
     data: [],
   },
 ])
-const usersChartOptions = ref({
+const usersOptions = ref({
   theme: {
     mode: 'dark'
   },
@@ -100,12 +100,12 @@ const addUser = (user: any) =>  {
       type="area"
       height="200"
       :series="usersSeries"
-      :options="usersChartOptions"
+      :options="usersOptions"
     />
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .starcraft-users {
   h2 {
     margin-top: 20px;
