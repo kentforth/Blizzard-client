@@ -9,15 +9,16 @@ export default {
 import { socket } from "@/services/socket";
 
 import {
+  ref,
   computed,
   onBeforeMount,
-  onBeforeUnmount, ref
+  onBeforeUnmount
 } from 'vue'
 import UiButton from "@/components/UiButton/UiButton.vue";
 
+import Race from "@/components/pages/Starcraft/Race/Race.vue";
 import Users from "@/components/pages/Starcraft/Users/Users.vue";
 import Cards from "@/components/pages/Starcraft/Cards/Cards.vue";
-import Race from "@/components/pages/Starcraft/Race/Race.vue";
 
 onBeforeMount(() => {
   socket.connect()

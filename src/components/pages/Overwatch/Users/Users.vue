@@ -10,6 +10,8 @@ import {
   onBeforeMount
 } from 'vue'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import Spinner from 'vue-easy-spinner/package/Spinner.vue';
 
 import { socket } from "@/services/socket";
