@@ -19,6 +19,7 @@ import UiButton from "@/components/UiButton/UiButton.vue";
 import Race from "@/components/pages/Starcraft/Race/Race.vue";
 import Users from "@/components/pages/Starcraft/Users/Users.vue";
 import Cards from "@/components/pages/Starcraft/Cards/Cards.vue";
+import ClanMembers from "@/components/pages/Starcraft/ClanMembers/ClanMembers.vue";
 
 onBeforeMount(() => {
   socket.connect()
@@ -58,6 +59,8 @@ const onClick  = () => {
       <Cards class="starcraft__cards" />
 
       <Race class="starcraft__race" />
+      
+      <ClanMembers class="starcraft__clan-members" />
     </div>
   </div>
 </template>
@@ -85,7 +88,8 @@ const onClick  = () => {
     margin-top: 20px;
   }
   
-  &__race {
+  &__race,
+  &__clan-members {
     margin-top: 20px;
   }
   
