@@ -45,7 +45,7 @@ const chartOptions = ref( {
     type: "gradient",
   },
   legend: {
-    formatter: function (val, opts) {
+    formatter: function (val: number, opts: any) {
       return val + " - " + opts.w.globals.series[opts.seriesIndex];
     },
   },
