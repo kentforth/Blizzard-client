@@ -148,7 +148,6 @@ const onClick = () => {
       </div>
     </div>
     
-    
     <button
       class="starcraft-race__button"
       @click="onClick"
@@ -172,6 +171,7 @@ const onClick = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   &__inner {
     width: 100%;
     display: grid;
@@ -183,6 +183,10 @@ const onClick = () => {
     display: flex;
     flex-direction: column;
     justify-items: center;align-items: center;
+    
+    h2 {
+      margin-bottom: 10px;
+    }
   }
   
   &__input {
@@ -240,6 +244,16 @@ const onClick = () => {
   
   &__chart {
     margin-top: 20px;
+  }
+  
+  @include ui-mobile-only {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+    
+    &__input {
+      margin-bottom: 20px;
+    }
   }
 }
 </style>
