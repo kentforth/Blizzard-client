@@ -15,13 +15,18 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-
+    "types": [],
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*"
+  ],
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
