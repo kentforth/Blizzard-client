@@ -11,8 +11,6 @@ import {
   onBeforeUnmount
 } from 'vue'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import Spinner from 'vue-easy-spinner/package/Spinner.vue';
 
 import { socket } from "@/services/socket";
@@ -26,7 +24,7 @@ const usersSeries = ref<ISeries[]>([
     data: [],
   },
 ])
-const usersOptions = ref({
+const chartOptions = ref({
   theme: {
     mode: 'dark'
   },
@@ -48,7 +46,7 @@ const usersOptions = ref({
       },
     },
   },
-  colors: ["#9C8611"],
+  colors: ["#010D4F"],
       dataLabels: {
     enabled: false,
   },
@@ -117,7 +115,7 @@ const addUser = (user: any) =>  {
       type="area"
       height="200"
       :series="usersSeries"
-      :options="usersOptions"
+      :options="chartOptions"
     />
   </div>
 </template>
