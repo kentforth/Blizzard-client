@@ -10,9 +10,13 @@ import {
   onBeforeMount
 } from 'vue'
 
+import Spinner from 'vue-easy-spinner/package/Spinner.vue';
+
 import { socket } from "@/services/socket";
 
 import { ISeries } from '@/types'
+
+const hasSpinner = ref(true)
 
 const usersSeries = ref<ISeries[]>([
   {
@@ -89,21 +93,44 @@ const addUser  = (user: any) => {
   }
 
   usersSeries.value[0].data.push(user);
+  
+  if (usersSeries.value[0].data.length) {
+    hasSpinner.value = false
+  }
 }
 </script>
 
 <template>
-  <apexchart
-    type="area"
-    height="270"
-    :series="usersSeries"
-    :options="usersOptions"
-    class="overwatch-users-chart"
-  />
+  <div class="overwatch-users">
+    <Spinner
+      v-if="hasSpinner"
+      type="circular"
+      size="36"
+      class="overwatch-users__spinner"
+    />
+
+    <apexchart
+      type="area"
+      height="270"
+      :series="usersSeries"
+      :options="usersOptions"
+      class="overwatch-users__chart"
+    />
+  </div>
 </template>
 
-<style lang="scss">
-.overwatch-users-chart {
-  margin-top: 10px;
+<style lang="scss" scoped>
+.overwatch-users {
+  position: relative;
+  
+  &__chart {
+    margin-top: 10px;
+  }
+  
+  &__spinner {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+  }
 }
 </style>

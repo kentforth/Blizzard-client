@@ -17,6 +17,7 @@ import UiButton from "@/components/UiButton/UiButton.vue";
 
 import Users from "@/components/pages/Starcraft/Users/Users.vue";
 import Cards from "@/components/pages/Starcraft/Cards/Cards.vue";
+import Race from "@/components/pages/Starcraft/Race/Race.vue";
 
 onBeforeMount(() => {
   socket.connect()
@@ -54,6 +55,8 @@ const onClick  = () => {
       <Users />
       
       <Cards class="starcraft__cards" />
+
+      <Race class="starcraft__race" />
     </div>
   </div>
 </template>
@@ -78,6 +81,10 @@ const onClick  = () => {
   }
   
   &__cards {
+    margin-top: 20px;
+  }
+  
+  &__race {
     margin-top: 20px;
   }
   

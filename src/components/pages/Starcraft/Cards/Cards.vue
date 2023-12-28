@@ -50,21 +50,7 @@ const terrans = [
 ]
 
 const zergs = [
-  {
-    title: 'Zealot',
-    image: zealot
-  },
-  {
-    title: 'Carrier',
-    image: carrier
-  },
-  {
-    title: 'High Templar',
-    image: highTemplar
-  }
-]
-
-const protosses = [
+  
   {
     title: 'Mutalisk',
     image: mutalisk
@@ -77,6 +63,21 @@ const protosses = [
     title: 'Ultralisk',
     image: ultralisk
   }
+]
+
+const protosses = [
+  {
+    title: 'Zealot',
+    image: zealot
+  },
+  {
+    title: 'Carrier',
+    image: carrier
+  },
+  {
+    title: 'High Templar',
+    image: highTemplar
+  },
 ]
 
 const cards: ICard[] = [
@@ -101,11 +102,11 @@ const cards: ICard[] = [
 <template>
   <div class="starcraft-cards">
     <Card
+      v-for="card in cards"
       :key="card.alt"
       :alt="card.alt"
       :image="card.image"
       :units="card.units"
-      v-for="card in cards"
     />
   </div>
 </template>

@@ -11,10 +11,13 @@ import {
   onBeforeUnmount
 } from 'vue'
 
+import Spinner from 'vue-easy-spinner/package/Spinner.vue';
+
 import { socket } from "@/services/socket";
 
 import { ISeries } from "@/types";
 
+const hasSpinner = ref(true)
 const usersSeries = ref<ISeries[]>([
   {
     name: "Users",
@@ -88,6 +91,11 @@ const addUser = (user: any) =>  {
   } 
     
   usersSeries.value[0].data.push(user);
+  
+  if (usersSeries.value[0].data.length) {
+    hasSpinner.value = false
+  }
+  
 }
 </script>
 
@@ -95,6 +103,13 @@ const addUser = (user: any) =>  {
   <div class="starcraft-users">
     <h2>Users</h2>
 
+    <Spinner
+      v-if="hasSpinner"
+      type="circular"
+      size="36"
+      class="starcraft-users__spinner"
+    />
+    
     <apexchart
       ref="usersChart"
       type="area"
@@ -107,9 +122,16 @@ const addUser = (user: any) =>  {
 
 <style lang="scss" scoped>
 .starcraft-users {
+  position: relative;
   h2 {
     margin-top: 20px;
     text-align: center;
+  }
+  
+  &__spinner {
+    position: absolute;
+    left: 50%;
+    top: 100px;
   }
 }
 
