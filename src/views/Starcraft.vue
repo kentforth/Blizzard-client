@@ -14,6 +14,7 @@ import {
   onBeforeMount,
   onBeforeUnmount
 } from 'vue'
+
 import UiButton from "@/components/UiButton/UiButton.vue";
 
 import Race from "@/components/pages/Starcraft/Race/Race.vue";
