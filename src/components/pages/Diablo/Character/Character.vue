@@ -125,12 +125,11 @@ const remove = (index) => {
 
 const generateStats = () => {
   const array = stats.value.map(el => el.value)
-  const newArray = [];
+  const newArray: any = [];
   const sum = array.reduce((a, b) => a + b, 0);
   let percent: any | never[] = null;
   array.forEach((element: any) => {
     percent = (element * 100) / sum;
-    console.log('PRECENT', percent)
     newArray.push(percent?.toFixed(1));
   });
 
