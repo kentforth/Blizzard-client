@@ -127,7 +127,7 @@ const generateStats = () => {
   const array = stats.value.map(el => el.value)
   const newArray = [];
   const sum = array.reduce((a, b) => a + b, 0);
-  let percent: number | null = null;
+  let percent: number | string | null = null;
   array.forEach((element: any) => {
     percent = (element * 100) / sum;
     newArray.push(percent?.toFixed(1));

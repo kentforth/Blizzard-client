@@ -5,11 +5,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {
-  ref,
-  computed
-} from 'vue'
-
 import Character from "@/components/pages/Diablo/Character/Character.vue";
 
 const characters = [
