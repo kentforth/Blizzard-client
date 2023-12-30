@@ -20,6 +20,8 @@ const totalGames = ref<string>('0')
 onBeforeMount(() => {
   socket.on("heartStoneTotalGames", (games) => totalGames.value = games);
 })
+
+onBeforeUnmount(() => socket.off('heartStoneTotalGames'))
 </script>
 
 <template>
