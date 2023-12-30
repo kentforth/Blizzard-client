@@ -17,6 +17,7 @@ import CardsType from "@/components/pages/HeartStone/CardsType/CardsType.vue";
 import TopDecks from "@/components/pages/HeartStone/TopDecks/TopDecks.vue";
 import GamesToday from "@/components/pages/HeartStone/GamesToday/GamesToday.vue";
 import Winrates from "@/components/pages/HeartStone/Winrates/Winrates.vue";
+import CardsPlayed from "@/components/pages/HeartStone/CardsPlayed/CardsPlayed.vue";
 
 const isConnected = ref(true)
 
@@ -51,7 +52,11 @@ const onClick  = () => {
           <GamesToday />
         </div>
 
-        <Winrates />
+        <div class="heartstone__bottom">
+          <Winrates />
+
+          <CardsPlayed class="heartstone__cards-played" />
+        </div>
       </div>
     </div>
   </div>
@@ -85,6 +90,12 @@ const onClick  = () => {
     justify-content: center;
     justify-items: center;
   }
+  
+  &__bottom {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   &__button {
     margin-top: 40px;
@@ -101,6 +112,14 @@ const onClick  = () => {
     &__top {
       grid-template-columns: 1fr;
       align-items: center;
+    }
+
+    &__bottom {
+      grid-template-columns: 1fr;
+    }
+    
+    &__cards-played {
+      margin-top: 20px;
     }
   }
 }
