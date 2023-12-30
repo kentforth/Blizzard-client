@@ -16,6 +16,7 @@ import UiButton from "@/components/UiButton/UiButton.vue";
 import CardsType from "@/components/pages/HeartStone/CardsType/CardsType.vue";
 import TopDecks from "@/components/pages/HeartStone/TopDecks/TopDecks.vue";
 import GamesToday from "@/components/pages/HeartStone/GamesToday/GamesToday.vue";
+import Winrates from "@/components/pages/HeartStone/Winrates/Winrates.vue";
 
 const isConnected = ref(true)
 
@@ -34,19 +35,23 @@ const onClick  = () => {
 
 <template>
   <div class="heartstone">
-    <div class="container heartstone__container">
-      <UiButton
-        :text="text"
-        class="heartstone__button"
-        @click="onClick"
-      />
-      
-      <div class="heartstone__inner">
-        <CardsType />
+    <div class="heartstone__backdrop">
+      <div class="container heartstone__container">
+        <UiButton
+          :text="text"
+          class="heartstone__button"
+          @click="onClick"
+        />
 
-        <TopDecks />
+        <div class="heartstone__top">
+          <CardsType />
 
-        <GamesToday />
+          <TopDecks />
+
+          <GamesToday />
+        </div>
+
+        <Winrates />
       </div>
     </div>
   </div>
@@ -59,6 +64,10 @@ const onClick  = () => {
   min-height: 100vh;
   width: 100%;
   backdrop-filter: blur(10px);
+  
+  &__backdrop {
+    background: rgba(1, 1, 1, 0.7);
+  }
 
   &__container {
     margin-left: auto;
@@ -67,7 +76,7 @@ const onClick  = () => {
     flex-direction: column;
   }
   
-  &__inner {
+  &__top {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -89,7 +98,7 @@ const onClick  = () => {
       padding: 50px 20px 20px 20px;
     }
     
-    &__inner {
+    &__top {
       grid-template-columns: 1fr;
       align-items: center;
     }

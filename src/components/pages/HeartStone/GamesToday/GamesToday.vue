@@ -47,7 +47,7 @@ onBeforeUnmount(() => socket.off('heartStoneTotalGames'))
   h2 {
     width: 200px;
     overflow: hidden;
-    color: #6b430c;
+    color: $brown;
     font-weight: 700;
     z-index: 999;
     text-align: left;
