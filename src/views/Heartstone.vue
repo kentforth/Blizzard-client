@@ -7,12 +7,15 @@ export default {
 <script setup lang="ts">
 import {
   ref,
-  computed
+  computed,
+  onBeforeMount,
+  onBeforeUnmount
 } from 'vue'
 
 import { socket } from "@/services/socket";
 
 import UiButton from "@/components/UiButton/UiButton.vue";
+
 import CardsType from "@/components/pages/HeartStone/CardsType/CardsType.vue";
 import TopDecks from "@/components/pages/HeartStone/TopDecks/TopDecks.vue";
 import GamesToday from "@/components/pages/HeartStone/GamesToday/GamesToday.vue";
@@ -22,6 +25,14 @@ import CardsPlayed from "@/components/pages/HeartStone/CardsPlayed/CardsPlayed.v
 const isConnected = ref(true)
 
 const text = computed(() => isConnected.value ? 'Pause connection' : 'Resume connection')
+
+onBeforeMount(() => {
+  socket.connect()
+})
+
+onBeforeUnmount(() => {
+  socket.disconnect()
+})
 
 const onClick  = () => {
   isConnected.value = !isConnected.value

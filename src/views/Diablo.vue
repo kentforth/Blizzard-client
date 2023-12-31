@@ -7,6 +7,8 @@ export default {
 <script setup lang="ts">
 import {
   ref,
+  onBeforeMount,
+  onBeforeUnmount,
   computed
 } from 'vue'
 
@@ -20,6 +22,14 @@ import CharacterStats from "@/components/pages/Diablo/CharacterStats/CharacterSt
 const isConnected = ref(true)
 
 const text = computed(() => isConnected.value ? 'Pause connection' : 'Resume connection')
+
+onBeforeMount(() => {
+  socket.connect()
+})
+
+onBeforeUnmount(() => {
+  socket.disconnect()
+})
 
 const onClick  = () => {
   isConnected.value = !isConnected.value

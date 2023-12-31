@@ -191,6 +191,7 @@ const generateStats = () => {
   box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.7);
   flex-direction: column;
   align-items: center;
+  background: rgba(1, 1, 1, 0.9);
   
   h3 {
     text-align: center;

@@ -22,10 +22,10 @@ components: {
 </script>
 
 <script setup>
-import { 
-  ref, 
+import {
+  ref,
   computed,
-  onMounted,
+  onBeforeMount,
   onBeforeUnmount
 } from 'vue'
 
@@ -70,7 +70,7 @@ const cards = [
   }
 ]
 
-onMounted(() => {
+onBeforeMount(() => {
   socket.connect()
 })
 
